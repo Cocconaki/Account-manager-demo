@@ -1,5 +1,7 @@
-from user import User, calculate_age
+from user import calculate_age, User
 from store_user import users
+import os
+import time
 
 
 class Filter:
@@ -40,8 +42,22 @@ class Filter:
             user.show_user_data(user.user_id)
     
     @staticmethod
-    def filter_by_gender(users, gender):
-        for user in filter(lambda u: u.gender == gender, users): user.show_user_data(user.user_id)
+    def filter_by_gender(users):
+        genders = ["male", "female"]
+        os.system('cls')
+        while True:
+            
+            gender = input("Enter gender male/female: ")
+            if gender.lower() not in genders:
+                    print("Choose a valid gender!")
+                    time.sleep(1)
+                    continue
+            else:
+                for user in users:
+                    if user.gender == gender:
+                        user.show_user_data(user.user_id)
+                        input()
+                        break
 
     @staticmethod
     def filter_by_age(users,age):
@@ -70,7 +86,7 @@ class Filter:
             user.show_user_data(user.user_id)
 
     @staticmethod
-    def filter_age_descending(users):
+    def filter_age_descending(users): 
         sorted_users_byage = sorted(users, key=lambda user: user.dob, reverse=True)
         for user in sorted_users_byage:
             user.show_user_data(user.user_id)

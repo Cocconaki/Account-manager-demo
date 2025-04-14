@@ -45,8 +45,9 @@ while True:
                         1. Filter by salary: 
                         2. Filter by salary range:
                         3. Filter salary ascending: 
-                        4. Filter salary descending: 
-                        5. Back to main menu: """)
+                        4. Filter salary descending:
+                        5. Filter by gender:  
+                        999. Back to main menu: """)
                 
                 choice = int(input(": "))
                 match choice:
@@ -70,6 +71,12 @@ while True:
                         input()
                     
                     case 5:
+                        os.system('cls')
+                        gender = str(input("Enter gender male/female: "))
+                        Filter.filter_by_gender(users)
+                        input()
+                    
+                    case 999:
                         os.system('cls')
                         print("Returning to main menu")
                         time.sleep(2)
