@@ -36,6 +36,7 @@ class Filter:
         users_sorted = sorted(users, key=lambda user: user.salary, reverse=reverse)
         for user in users_sorted:
             user.show_user_data(user.user_id)
+            print("----------------------------")
     
     
     @staticmethod
@@ -54,6 +55,7 @@ class Filter:
             if user.gender == gender:
                 found = True
                 user.show_user_data(user.user_id)
+                print("----------------------------")
         if found == False:
             print("No one was found")
         input()
@@ -85,6 +87,7 @@ class Filter:
         sorted_users_byage = sorted(users, key=lambda user: user.dob, reverse=reverse)
         for user in sorted_users_byage: 
             user.show_user_data(user.user_id)
+            print("----------------------------")
  
         
        

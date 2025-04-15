@@ -67,11 +67,11 @@ while True:
                         Filter.filter_by_salary_range(bottom, top)
                     case 3:
                         os.system('cls')
-                        Filter.filter_salary_ascending()
+                        Filter.filter_salary_desc_asc("asc")
                         input()
                     case 4: 
                         os.system('cls')
-                        Filter.filter_salary_descending()
+                        Filter.filter_salary_desc_asc("desc")
                         input()
                     
                     case 5:
@@ -95,12 +95,12 @@ while True:
                     
                     case 8:
                         os.system('cls')
-                        Filter.filter_age_des_asc("desc")
+                        Filter.filter_age_des_asc("asc")
                         input()
                     
                     case 9:
                         os.system('cls')
-                        Filter.filter_age_des_asc("asc")
+                        Filter.filter_age_des_asc("desc")
                         input()
                     
                     case 999:
