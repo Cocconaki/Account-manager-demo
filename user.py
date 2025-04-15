@@ -1,5 +1,6 @@
 from store_user import *
 from datetime import date, datetime
+import time
 
 def calculate_age(dob):
     today = date.today()
@@ -124,9 +125,12 @@ class User:
                 users.remove(user)
                 taken_ids.remove(user_id_del)
                 deleted_ids.append(user_id_del)
+                print(f"User with ID: {user_id_del} was succesfully deleted")
+                time.sleep(1)
 
             else:
                 print(f"User with id:{user_id_del} not found ")
+                time.sleep(1)
     
     @classmethod
     def edit_user_data(cls):
