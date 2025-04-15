@@ -46,7 +46,11 @@ while True:
                         2. Filter by salary range:
                         3. Filter salary ascending: 
                         4. Filter salary descending:
-                        5. Filter by gender:  
+                        5. Filter by gender:
+                        6 Filter by age:
+                        7. Filet by age range:
+                        8. Filter by age descening
+                        9. Filter by age ascending 
                         999. Back to main menu: """)
                 
                 choice = int(input(": "))
@@ -73,7 +77,30 @@ while True:
                     case 5:
                         os.system('cls')
                         gender = str(input("Enter gender male/female: "))
-                        Filter.filter_by_gender(users)
+                        Filter.filter_by_gender(gender)
+                        input()
+                    
+                    case 6:
+                        os.system('cls')
+                        age = int(input("Enter age: "))
+                        Filter.filter_by_age(age)
+                        input()
+                    
+                    case 7:
+                        os.system('cls')
+                        age_bottom = int(input("From age: "))
+                        age_top = int(input("To age: "))
+                        Filter.filter_by_age_range(age_bottom, age_top)
+                        input()
+                    
+                    case 8:
+                        os.system('cls')
+                        Filter.filter_age_des_asc("desc")
+                        input()
+                    
+                    case 9:
+                        os.system('cls')
+                        Filter.filter_age_des_asc("asc")
                         input()
                     
                     case 999:

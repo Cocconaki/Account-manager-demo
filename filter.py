@@ -28,39 +28,39 @@ class Filter:
         if count == 0:
             print("There are no salaries in this range.")
 
+    
+    
     @staticmethod
-    def filter_salary_ascending():
-        
-        users_sorted = sorted(users, key=lambda user: user.salary)
-        for user in users_sorted:
-            user.show_user_data(user.user_id)
-
-    @staticmethod
-    def filter_salary_descending():
-        users_sorted = sorted(users, key=lambda user: user.salary, reverse=True)
+    def filter_salary_desc_asc(order="asc"):
+        reverse = True if order == "desc" else False
+        users_sorted = sorted(users, key=lambda user: user.salary, reverse=reverse)
         for user in users_sorted:
             user.show_user_data(user.user_id)
     
+    
     @staticmethod
-    def filter_by_gender(users):
-        genders = ["male", "female"]
+    def filter_by_gender(gender):
         os.system('cls')
+        genders = ['male', 'female']
         while True:
-            
-            gender = input("Enter gender male/female: ")
             if gender.lower() not in genders:
-                    print("Choose a valid gender!")
-                    time.sleep(1)
-                    continue
+               print("Enter a valid gender")
+               time.sleep(1)
             else:
-                for user in users:
-                    if user.gender == gender:
-                        user.show_user_data(user.user_id)
-                        input()
-                        break
+                 break
+        os.system('cls')
+        found = False
+        for user in users:
+            if user.gender == gender:
+                found = True
+                user.show_user_data(user.user_id)
+        if found == False:
+            print("No one was found")
+        input()
+       
 
     @staticmethod
-    def filter_by_age(users,age):
+    def filter_by_age(age):
         count = 0
         for user in users:
             if calculate_age(user.dob) == age:
@@ -70,7 +70,7 @@ class Filter:
             print(f"No one at the age of {age} was found")
     
     @staticmethod
-    def filter_by_age_range(bottom, top, users):
+    def filter_by_age_range(bottom, top):
         count = 0
         for user in users:
             if bottom <= calculate_age(user.dob) <= top:
@@ -80,15 +80,13 @@ class Filter:
             print(f"No one at the range of {bottom}-{top} was found")
 
     @staticmethod
-    def filter_age_descending(users):
-        sorted_users_byage = sorted(users, key=lambda user: user.dob)
-        for user in sorted_users_byage:
+    def filter_age_des_asc(order = "asc"):
+        reverse = True if order == "desc" else False
+        sorted_users_byage = sorted(users, key=lambda user: user.dob, reverse=reverse)
+        for user in sorted_users_byage: 
             user.show_user_data(user.user_id)
-
-    @staticmethod
-    def filter_age_descending(users): 
-        sorted_users_byage = sorted(users, key=lambda user: user.dob, reverse=True)
-        for user in sorted_users_byage:
-            user.show_user_data(user.user_id)
-
+ 
         
+       
+
+         

@@ -70,7 +70,12 @@ class User:
                         break
                 
                 role = str(input("Enter users role: "))
-                salary = int(input("Enter users salary: (USD)"))
+                while True:
+                    try:
+                        salary = int(input("Enter users salary: (USD)"))
+                        break
+                    except ValueError:
+                        print("Please enter a number!")
                 phone_number = str(input("Enter phone number: "))
 
                 def generate_id():
