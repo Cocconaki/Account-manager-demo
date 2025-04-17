@@ -110,31 +110,9 @@ while True:
                         time.sleep(2)
                         break
         case 5:
-            while True:
-                try:
-                    user_to_edit = int(input("Enter user's ID: "))
-                except ValueError:
-                    print("Invalid format, please try again.")
-                    time.sleep(1)
-                    continue
-
-                if user_to_edit not in taken_ids:
-                    print(f"ID {user_to_edit} not found.")
-                    again = input("Want to try again? (y/n): ").strip().lower()
-                    if again != "y":
-                        break  
-                    else:
-                        continue  
-                else:
-                    print("""What do you want to edit?
-                            1. First name
-                            2. Last name
-                            3. Role
-                            4. Salary
-                            5. Phone number""")
-                    break
+            pass
             
-            user_instance = next((user for user in users if user.user_id == user_to_edit), None)
+            
 
 
 
